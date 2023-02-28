@@ -11,7 +11,7 @@ namespace Server.Hubs
 {
     public class ItemHub : Hub
     {
-        public async Task RefreshData(string connectionId, List<Item>? data, string userid = "") => 
+        public async Task InitData(string connectionId, List<Item>? data, string userid = "") => 
             await Clients.Client(connectionId).SendAsync("initData", data);
 
         public string GetConnectionId() => Context.ConnectionId;
