@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Code\\Dotnet\\Study\\RefreshDataSignalR\\Server\\Server.csproj": {}
+    "D:\\Code\\Dotnet\\RefreshDataSignalR\\Server\\Server.csproj": {}
   },
   "projects": {
-    "D:\\Code\\Dotnet\\Study\\RefreshDataSignalR\\Server\\Server.csproj": {
+    "D:\\Code\\Dotnet\\RefreshDataSignalR\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Code\\Dotnet\\Study\\RefreshDataSignalR\\Server\\Server.csproj",
+        "projectUniqueName": "D:\\Code\\Dotnet\\RefreshDataSignalR\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "D:\\Code\\Dotnet\\Study\\RefreshDataSignalR\\Server\\Server.csproj",
-        "packagesPath": "C:\\Users\\giangvu\\.nuget\\packages\\",
-        "outputPath": "D:\\Code\\Dotnet\\Study\\RefreshDataSignalR\\Server\\obj\\",
+        "projectPath": "D:\\Code\\Dotnet\\RefreshDataSignalR\\Server\\Server.csproj",
+        "packagesPath": "C:\\Users\\Giang\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\Dotnet\\RefreshDataSignalR\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\giangvu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Giang\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -76,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
