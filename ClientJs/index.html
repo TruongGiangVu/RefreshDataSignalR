@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>SignalR</h1>
+    <label>Userid</label>
+    <input id="userid">
+    <button onclick="RunJob()">click</button>
+    <br />
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>userid</th>
+                <th>name</th>
+                <th>description</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+
+        </tbody>
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script>
+        function RunJob() {
+            var userid = $('#userid').val();
+            var connectionId = '';
+            var hubConnection = new signalR.HubConnectionBuilder()
+                .withUrl("http://localhost:5041/item")
+                .build();
+
+            hubConnection.on('initData', (data) => {
+                this.data = data;
+                console.log(data);
+            });
+            hubConnection.on('refreshData', (data) => {
+                this.data = data;
+                console.log(data);
+            });
+
+            hubConnection.start();
+
+            hubConnection.invoke('GetConnectionId')
+                .then((data) => {
+                    console.log(data);
+                    connectionId = data;
+                    hubConnection.invoke('AddConnectedUser', userid).then((data) => {
+                        console.log(data);
+                        hubConnection.send('InitData', connectionId, userid);
+                    });
+                });
+        }
+
+    </script>
+</body>
+
+</html>

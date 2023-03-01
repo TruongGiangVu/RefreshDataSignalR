@@ -21,6 +21,7 @@ namespace Server.Controllers
         {
             this._hub = hub;
         }
+        [HttpGet("runJob")]
         public IActionResult RunJob(){
             return Ok();
         }

@@ -10,10 +10,8 @@ static async Task MainAsync()
 {
     // init data
     string connectionId = "";
-    string userid;
-
     Console.Write("Enter userid:");
-    userid = Console.ReadLine() ?? "giang";
+    string userid = Console.ReadLine() ?? "giang";
 
     // create connection
     HubConnection hubConnection = new HubConnectionBuilder()
