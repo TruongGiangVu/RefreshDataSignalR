@@ -1,4 +1,4 @@
-#RefreshDataSignalR
+# RefreshDataSignalR
 
 ## Components
 - Server: Web Service includes: 
@@ -23,6 +23,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
     ```
 
+## Postman
+- Collection: RefreshDataSignalR.postman_collection.json
 
 ## References
 - https://www.freecodespot.com/blog/display-database-change-notification-using-signalr/

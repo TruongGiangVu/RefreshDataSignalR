@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "37b21d10-4e2c-4139-80d3-a2196546a4c3",
+		"name": "RefreshDataSignalR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16545301"
+	},
+	"item": [
+		{
+			"name": "ConnectedUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5041/api/item/ConnectedUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5041",
+					"path": [
+						"api",
+						"item",
+						"ConnectedUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 6,\r\n        \"userId\": \"giang\",\r\n        \"name\": \"Test6\",\r\n        \"description\": \"fsdfsdf\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5041/api/item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5041",
+					"path": [
+						"api",
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 3,\r\n        \"userId\": \"admin\",\r\n        \"name\": \"Test3\",\r\n        \"description\": \"sieu nhan gao 20\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5041/api/item/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5041",
+					"path": [
+						"api",
+						"item",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5041/api/item?userid=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5041",
+					"path": [
+						"api",
+						"item"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
