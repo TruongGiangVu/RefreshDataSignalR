@@ -7,6 +7,23 @@
 - ClientConsole: 
 
 
+## Package
+- Dotnet: 
+    ```
+    dotnet add package Microsoft.AspNetCore.SignalR // server
+    dotnet add package Microsoft.AspNetCore.SignalR.Client // client
+    ```
+- Download and import
+    ```
+    npm install @microsoft/signalr // download
+    <script src="~/lib/signalr/signalr.js"></script>  // import
+    ```
+- cdn 
+    ```
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    ```
+
+
 ## References
 - https://www.freecodespot.com/blog/display-database-change-notification-using-signalr/
 - https://code-maze.com/how-to-send-client-specific-messages-using-signalr/
