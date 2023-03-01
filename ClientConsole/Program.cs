@@ -5,9 +5,11 @@ using Server.Models;
 Console.WriteLine("Hello, World!");
 
 string connectionId = "";
-string userid = "giang";
+Console.WriteLine("Enter userid:");
+
+string userid = Console.ReadLine();
 HubConnection hubConnection = new HubConnectionBuilder()
-    .WithUrl(new Uri("http://127.0.0.1:5000/itemhub"))
+    .WithUrl(new Uri("http://127.0.0.1:5000/item"))
     //.WithAutomaticReconnect(new RandomRetryPolicy())
     .Build();
 await hubConnection.StartAsync();
