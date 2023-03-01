@@ -15,11 +15,11 @@ namespace Server.Controllers
     [Route("api/[controller]")]
     public class ItemController : ControllerBase
     {
-        private readonly IHubContext<ItemHub> hub;
+        private readonly IHubContext<ItemHub> _hub;
 
         public ItemController(IHubContext<ItemHub> hub)
         {
-            this.hub = hub;
+            this._hub = hub;
         }
         public IActionResult RunJob(){
             return Ok();
@@ -35,6 +35,7 @@ namespace Server.Controllers
         }
         [HttpPost()]
         public IActionResult CreateItem([FromBody] Item item){
+            Console.WriteLine($"CreateItem {item.ToString()}");
             ItemRepository repository = new();
             repository.Create(item);
             this.RefreshData(item.UserId!);
@@ -42,6 +43,7 @@ namespace Server.Controllers
         }
         [HttpPut("{id}")]
         public IActionResult UpdateItem(int id, [FromBody] Item item){
+            Console.WriteLine($"UpdateItem {item.ToString()}");
             ItemRepository repository = new();
             repository.Update(id, item);
             this.RefreshData(item.UserId!);
@@ -49,7 +51,11 @@ namespace Server.Controllers
         }
         private void RefreshData(string userId){
             ItemRepository repository = new();
-            hub.Clients.All.SendAsync("refreshData", repository.Get(userId));
+            Console.WriteLine($"refreshData userId {userId}");
+            //hub.Clients.All.SendAsync("refreshData", repository.Get(userId));
+            List<string> connectedId = ConnectionManager.GetConnectedId(userId)??new();
+            foreach(string item in connectedId)
+                _hub.Clients.Client(item).SendAsync("refreshData", repository.Get(userId));
         }
     }
 }
